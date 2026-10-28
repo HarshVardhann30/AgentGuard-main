@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-10-28T07:06:56.074823+00:00",
+  "model": "llama3.2:3b",
+  "live_attempted": false,
+  "live_completed": false,
+  "live_status": "skipped",
+  "security_checks_passed": true,
+  "security_check_count": 12,
+  "live_check_count": 1,
+  "checks_passed": 13,
+  "checks_total": 13,
+  "disposable_workspace": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\agentguard-autogen-smoke-w2r4jejq",
+  "live": {
+    "attempted": false,
+    "completed": false,
+    "answer": "",
+    "error": "skipped via --skip-live",
+    "elapsed_ms": null,
+    "tool_calls": [],
+    "model": "llama3.2:3b"
+  },
+  "checks": [
+    {
+      "group": "live",
+      "check": "live_conversation_completed",
+      "passed": true,
+      "detail": "skipped via --skip-live"
+    },
+    {
+      "group": "workflow",
+      "check": "permitted_read_allowed_and_executed",
+      "passed": true,
+      "detail": "{\"status\": \"allowed\", \"decision\": \"allow\", \"executed\": true, \"audit_persisted\": true}"
+    },
+    {
+      "group": "workflow",
+      "check": "unknown_tool_rejected",
+      "passed": true,
+      "detail": "unknown tool; request denied"
+    },
+    {
+      "group": "workflow",
+      "check": "unknown_tool_through_autogen_denied_without_execution",
+      "passed": true,
+      "detail": "{\"action_id\": \"02e3a7c9-a7fa-4920-ba99-b2283a5f2275\", \"tool\": \"shell\", \"status\": \"blocked\", \"decision\": \"block\", \"reason\": \"unknown tool; request denied\", \"result\": null, \"duration_ms\": 4.338, \"audit_persisted\": true, \"error\": \"unknown tool; request denied\", \"risk_score\": null, \"risk_probability\": null, \"model_version\": null, \"approval_id\": null, \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "malformed_arguments_denied_without_execution",
+      "passed": true,
+      "detail": "{\"action_id\": \"4dbb9835-866e-471d-9834-8da424d337fa\", \"tool\": \"calculator\", \"status\": \"blocked\", \"decision\": \"block\", \"reason\": \"calculator requires exactly the declared arguments; request denied\", \"result\": null, \"duration_ms\": 4.836, \"audit_persisted\": true, \"error\": \"calculator requires exactly the declared arguments; request denied\", \"risk_score\": null, \"risk_probability\": null, \"model_version\": null, \"approval_id\": null, \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "write_reaches_review_and_is_not_executed",
+      "passed": true,
+      "detail": "{\"status\": \"review_required\", \"executed\": false, \"approval_id\": \"06acaede-7a2f-48c3-8161-990898167f9a\"}"
+    },
+    {
+      "group": "workflow",
+      "check": "rejected_approval_does_not_execute",
+      "passed": true,
+      "detail": "{\"status\": \"rejected\", \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "invalid_approval_token_does_not_execute",
+      "passed": true,
+      "detail": "{\"status\": \"unauthorized\", \"executed\": false, \"error\": \"authorized approver credentials required\"}"
+    },
+    {
+      "group": "workflow",
+      "check": "valid_approval_executes_after_revalidation",
+      "passed": true,
+      "detail": "{\"status\": \"allowed\", \"executed\": true, \"result\": {\"filename\": \"smoke_review.txt\", \"size_bytes\": 24}, \"error\": null, \"audit_persisted\": true, \"action_id\": \"fa2e26fe-b093-4abf-8ceb-32831d63f75c\", \"execution_action_id\": \"b7885243-588a-444f-968e-a368c3898b61\", \"approval_id\": \"e6b27140-4de6-4396-ac42-a1bcf0dd9aae\"}"
+    },
+    {
+      "group": "workflow",
+      "check": "block_traversal_has_no_side_effect",
+      "passed": true,
+      "detail": "{\"status\": \"blocked\", \"decision\": \"block\", \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "block_protected_path_has_no_side_effect",
+      "passed": true,
+      "detail": "{\"status\": \"blocked\", \"decision\": \"block\", \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "workflow_audit_reflects_actual_execution",
+      "passed": true,
+      "detail": "records=13 executed=[('read_file', 'allowed'), ('write_file', 'allowed')]"
+    },
+    {
+      "group": "workflow",
+      "check": "workflow_jsonl_matches_database",
+      "passed": true,
+      "detail": "jsonl=13 db=13"
+    }
+  ],
+  "limitations": [
+    "Synthetic disposable documents and an isolated temporary SQLite database only.",
+    "Part B drives the adapter's registered AutoGen FunctionTool callables directly; the live model is not relied on to reproduce each approval branch deterministically.",
+    "Part A depends on a local Ollama daemon and model availability."
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-10-28T10:39:46.896565+00:00",
+  "model": "llama3.2:3b",
+  "live_attempted": true,
+  "live_completed": true,
+  "live_status": "passed",
+  "security_checks_passed": true,
+  "security_check_count": 12,
+  "live_check_count": 6,
+  "checks_passed": 18,
+  "checks_total": 18,
+  "disposable_workspace": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\agentguard-autogen-smoke-q94tz40g",
+  "live": {
+    "attempted": true,
+    "completed": true,
+    "answer": "The result of the calculation 70 * 90 is 6300.",
+    "error": null,
+    "elapsed_ms": 3367.1,
+    "tool_calls": [
+      {
+        "tool": "calculator",
+        "status": "allowed",
+        "decision": "allow",
+        "executed": true,
+        "action_id": "6aef3786-312d-44fe-a946-55e5276cc9d9",
+        "audit_persisted": true,
+        "arguments": {
+          "expression": "70 * 90"
+        },
+        "error": null,
+        "result": "{'result': 6300}"
+      }
+    ],
+    "model": "llama3.2:3b"
+  },
+  "checks": [
+    {
+      "group": "live",
+      "check": "live_conversation_completed",
+      "passed": true,
+      "detail": "1 tool call(s), answer='The result of the calculation 70 * 90 is 6300.'"
+    },
+    {
+      "group": "live",
+      "check": "live_tool_call_reached_guard_and_executed",
+      "passed": true,
+      "detail": "[{\"tool\": \"calculator\", \"status\": \"allowed\", \"decision\": \"allow\", \"executed\": true, \"action_id\": \"6aef3786-312d-44fe-a946-55e5276cc9d9\", \"audit_persisted\": true, \"arguments\": {\"expression\": \"70 * 90\"}, \"error\": null, \"result\": \"{'result': 6300}\"}]"
+    },
+    {
+      "group": "live",
+      "check": "live_calculation_answer_and_audit_verified",
+      "passed": true,
+      "detail": "{\"answer\": \"The result of the calculation 70 * 90 is 6300.\", \"calculator\": {\"status\": \"allowed\", \"executed\": true, \"audit_persisted\": true, \"result\": {\"result\": 6300}, \"error\": null}}"
+    },
+    {
+      "group": "live",
+      "check": "live_audit_records_exist",
+      "passed": true,
+      "detail": "2 record(s) for task 7efe4dd8-4086-4eec-85ca-42957e5c3f3f"
+    },
+    {
+      "group": "live",
+      "check": "live_identity_and_session_correlation",
+      "passed": true,
+      "detail": "agent_id=autogen:agentguard_autogen session_id=69e97e5e-9b0e-4d74-bca9-1cd05c9c29dd task_id=7efe4dd8-4086-4eec-85ca-42957e5c3f3f"
+    },
+    {
+      "group": "live",
+      "check": "live_audit_matches_reported_executions",
+      "passed": true,
+      "detail": "matched=1 missing=[]"
+    },
+    {
+      "group": "workflow",
+      "check": "permitted_read_allowed_and_executed",
+      "passed": true,
+      "detail": "{\"status\": \"allowed\", \"decision\": \"allow\", \"executed\": true, \"audit_persisted\": true}"
+    },
+    {
+      "group": "workflow",
+      "check": "unknown_tool_rejected",
+      "passed": true,
+      "detail": "unknown tool; request denied"
+    },
+    {
+      "group": "workflow",
+      "check": "unknown_tool_through_autogen_denied_without_execution",
+      "passed": true,
+      "detail": "{\"action_id\": \"6044a4e6-e0af-4bc2-94fe-85c8ab4b4990\", \"tool\": \"shell\", \"status\": \"blocked\", \"decision\": \"block\", \"reason\": \"unknown tool; request denied\", \"result\": null, \"duration_ms\": 6.027, \"audit_persisted\": true, \"error\": \"unknown tool; request denied\", \"risk_score\": null, \"risk_probability\": null, \"model_version\": null, \"approval_id\": null, \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "malformed_arguments_denied_without_execution",
+      "passed": true,
+      "detail": "{\"action_id\": \"34ef7144-4978-4753-88fd-3f4b405019ec\", \"tool\": \"calculator\", \"status\": \"blocked\", \"decision\": \"block\", \"reason\": \"calculator requires exactly the declared arguments; request denied\", \"result\": null, \"duration_ms\": 6.722, \"audit_persisted\": true, \"error\": \"calculator requires exactly the declared arguments; request denied\", \"risk_score\": null, \"risk_probability\": null, \"model_version\": null, \"approval_id\": null, \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "write_reaches_review_and_is_not_executed",
+      "passed": true,
+      "detail": "{\"status\": \"review_required\", \"executed\": false, \"approval_id\": \"337cbfee-a550-4b2b-8a15-09356614d647\"}"
+    },
+    {
+      "group": "workflow",
+      "check": "rejected_approval_does_not_execute",
+      "passed": true,
+      "detail": "{\"status\": \"rejected\", \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "invalid_approval_token_does_not_execute",
+      "passed": true,
+      "detail": "{\"status\": \"unauthorized\", \"executed\": false, \"error\": \"authorized approver credentials required\"}"
+    },
+    {
+      "group": "workflow",
+      "check": "valid_approval_executes_after_revalidation",
+      "passed": true,
+      "detail": "{\"status\": \"allowed\", \"executed\": true, \"result\": {\"filename\": \"smoke_review.txt\", \"size_bytes\": 24}, \"error\": null, \"audit_persisted\": true, \"action_id\": \"085fd496-06bd-4aad-a9c5-dcec0f37de06\", \"execution_action_id\": \"527d4188-f773-4b10-b946-7b88bdb4ed6c\", \"approval_id\": \"9ac17a52-bbd6-44b6-962a-c86c2096976d\"}"
+    },
+    {
+      "group": "workflow",
+      "check": "block_traversal_has_no_side_effect",
+      "passed": true,
+      "detail": "{\"status\": \"blocked\", \"decision\": \"block\", \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "block_protected_path_has_no_side_effect",
+      "passed": true,
+      "detail": "{\"status\": \"blocked\", \"decision\": \"block\", \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "workflow_audit_reflects_actual_execution",
+      "passed": true,
+      "detail": "records=15 executed=[('search_files', 'allowed'), ('read_file', 'allowed'), ('write_file', 'allowed')]"
+    },
+    {
+      "group": "workflow",
+      "check": "workflow_jsonl_matches_database",
+      "passed": true,
+      "detail": "jsonl=15 db=15"
+    }
+  ],
+  "limitations": [
+    "Synthetic disposable documents and an isolated temporary SQLite database only.",
+    "Part B drives the adapter's registered AutoGen FunctionTool callables directly; the live model is not relied on to reproduce each approval branch deterministically.",
+    "Part A depends on a local Ollama daemon and model availability."
+  ]
+}

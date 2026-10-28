@@ -1,0 +1,164 @@
+{
+  "generated_at": "2026-10-28T09:05:10.783128+00:00",
+  "model": "llama3.2:3b",
+  "live_attempted": true,
+  "live_completed": true,
+  "live_status": "passed",
+  "security_checks_passed": true,
+  "security_check_count": 12,
+  "live_check_count": 6,
+  "checks_passed": 18,
+  "checks_total": 18,
+  "disposable_workspace": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\agentguard-autogen-smoke-6hie3lf3",
+  "live": {
+    "attempted": true,
+    "completed": true,
+    "answer": "The total is 66000.",
+    "error": null,
+    "elapsed_ms": 1828.8,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "status": "allowed",
+        "decision": "allow",
+        "executed": true,
+        "action_id": "c446a15c-f259-43ff-87ff-4bc06010078d",
+        "audit_persisted": true,
+        "arguments": {
+          "filename": "sales_report.txt"
+        },
+        "error": null,
+        "result": "{'filename': 'sales_report.txt', 'content': 'January: 12000\\nFebruary: 15000\\nMarch: 18000\\nApril: 21000\\nBest region: North India\\n'}"
+      },
+      {
+        "tool": "calculator",
+        "status": "allowed",
+        "decision": "allow",
+        "executed": true,
+        "action_id": "1e7902f1-0a5a-42cd-9c0e-77101b24047a",
+        "audit_persisted": true,
+        "arguments": {
+          "expression": "12000+15000+18000+21000"
+        },
+        "error": null,
+        "result": "{'result': 66000}"
+      }
+    ],
+    "model": "llama3.2:3b"
+  },
+  "checks": [
+    {
+      "group": "live",
+      "check": "live_conversation_completed",
+      "passed": true,
+      "detail": "2 tool call(s), answer='The total is 66000.'"
+    },
+    {
+      "group": "live",
+      "check": "live_tool_call_reached_guard_and_executed",
+      "passed": true,
+      "detail": "[{\"tool\": \"read_file\", \"status\": \"allowed\", \"decision\": \"allow\", \"executed\": true, \"action_id\": \"c446a15c-f259-43ff-87ff-4bc06010078d\", \"audit_persisted\": true, \"arguments\": {\"filename\": \"sales_report.txt\"}, \"error\": null, \"result\": \"{'filename': 'sales_report.txt', 'content': 'January: 12000\\\\nFebruary: 15000\\\\nMarch: 18000\\\\nApril: 21000\\\\nBest region: North India\\\\n'}\"}, {\"tool\": \"calculator\", \"status\": \"allowed\", \"decision\": \"allow\", \"executed\": true, \"action_id\": \"1e7902f1-0a5a-42cd-9c0e-77101b24047a\", \"audit_persisted\": true, \"arguments\": {\"expression\": \"12000+15000+18000+21000\"}, \"error\": null, \"result\": \"{'result': 66000}\"}]"
+    },
+    {
+      "group": "live",
+      "check": "live_calculation_answer_and_audit_verified",
+      "passed": true,
+      "detail": "{\"answer\": \"The total is 66000.\", \"calculator\": {\"status\": \"allowed\", \"executed\": true, \"audit_persisted\": true, \"result\": {\"result\": 66000}, \"error\": null}}"
+    },
+    {
+      "group": "live",
+      "check": "live_audit_records_exist",
+      "passed": true,
+      "detail": "4 record(s) for task 3535f632-b04a-44ec-8bf0-ad68a96af738"
+    },
+    {
+      "group": "live",
+      "check": "live_identity_and_session_correlation",
+      "passed": true,
+      "detail": "agent_id=autogen:agentguard_autogen session_id=42ad3dad-46e9-4121-bf60-6d2ba9128b2a task_id=3535f632-b04a-44ec-8bf0-ad68a96af738"
+    },
+    {
+      "group": "live",
+      "check": "live_audit_matches_reported_executions",
+      "passed": true,
+      "detail": "matched=2 missing=[]"
+    },
+    {
+      "group": "workflow",
+      "check": "permitted_read_allowed_and_executed",
+      "passed": true,
+      "detail": "{\"status\": \"allowed\", \"decision\": \"allow\", \"executed\": true, \"audit_persisted\": true}"
+    },
+    {
+      "group": "workflow",
+      "check": "unknown_tool_rejected",
+      "passed": true,
+      "detail": "unknown tool; request denied"
+    },
+    {
+      "group": "workflow",
+      "check": "unknown_tool_through_autogen_denied_without_execution",
+      "passed": true,
+      "detail": "{\"action_id\": \"5eae88ba-39d1-41fc-954b-9188364d4ca0\", \"tool\": \"shell\", \"status\": \"blocked\", \"decision\": \"block\", \"reason\": \"unknown tool; request denied\", \"result\": null, \"duration_ms\": 4.308, \"audit_persisted\": true, \"error\": \"unknown tool; request denied\", \"risk_score\": null, \"risk_probability\": null, \"model_version\": null, \"approval_id\": null, \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "malformed_arguments_denied_without_execution",
+      "passed": true,
+      "detail": "{\"action_id\": \"6366ed77-90c2-4ec2-9874-0b57acf95710\", \"tool\": \"calculator\", \"status\": \"blocked\", \"decision\": \"block\", \"reason\": \"calculator requires exactly the declared arguments; request denied\", \"result\": null, \"duration_ms\": 4.01, \"audit_persisted\": true, \"error\": \"calculator requires exactly the declared arguments; request denied\", \"risk_score\": null, \"risk_probability\": null, \"model_version\": null, \"approval_id\": null, \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "write_reaches_review_and_is_not_executed",
+      "passed": true,
+      "detail": "{\"status\": \"review_required\", \"executed\": false, \"approval_id\": \"3af865cb-2e99-4566-85fb-de7642a23650\"}"
+    },
+    {
+      "group": "workflow",
+      "check": "rejected_approval_does_not_execute",
+      "passed": true,
+      "detail": "{\"status\": \"rejected\", \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "invalid_approval_token_does_not_execute",
+      "passed": true,
+      "detail": "{\"status\": \"unauthorized\", \"executed\": false, \"error\": \"authorized approver credentials required\"}"
+    },
+    {
+      "group": "workflow",
+      "check": "valid_approval_executes_after_revalidation",
+      "passed": true,
+      "detail": "{\"status\": \"allowed\", \"executed\": true, \"result\": {\"filename\": \"smoke_review.txt\", \"size_bytes\": 24}, \"error\": null, \"audit_persisted\": true, \"action_id\": \"328c208a-d4e1-4f34-a247-5425f7d43a53\", \"execution_action_id\": \"3c7a4283-35b4-42e5-b2c7-8f921ff77453\", \"approval_id\": \"eb2fa46a-df47-48fe-bbed-2ce1b075a0c3\"}"
+    },
+    {
+      "group": "workflow",
+      "check": "block_traversal_has_no_side_effect",
+      "passed": true,
+      "detail": "{\"status\": \"blocked\", \"decision\": \"block\", \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "block_protected_path_has_no_side_effect",
+      "passed": true,
+      "detail": "{\"status\": \"blocked\", \"decision\": \"block\", \"executed\": false}"
+    },
+    {
+      "group": "workflow",
+      "check": "workflow_audit_reflects_actual_execution",
+      "passed": true,
+      "detail": "records=13 executed=[('read_file', 'allowed'), ('write_file', 'allowed')]"
+    },
+    {
+      "group": "workflow",
+      "check": "workflow_jsonl_matches_database",
+      "passed": true,
+      "detail": "jsonl=13 db=13"
+    }
+  ],
+  "limitations": [
+    "Synthetic disposable documents and an isolated temporary SQLite database only.",
+    "Part B drives the adapter's registered AutoGen FunctionTool callables directly; the live model is not relied on to reproduce each approval branch deterministically.",
+    "Part A depends on a local Ollama daemon and model availability."
+  ]
+}

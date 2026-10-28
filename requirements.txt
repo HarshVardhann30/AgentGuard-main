@@ -1,0 +1,13 @@
+ollama>=0.4,<1
+pytest>=8,<9
+fastapi>=0.115,<1
+sqlalchemy>=2,<3
+httpx>=0.27,<1
+httpx2>=2,<3
+uvicorn>=0.30,<1
+scikit-learn==1.9.1
+xgboost==3.4.1
+joblib>=1.4,<2
+autogen-agentchat==0.7.5
+autogen-core==0.7.5
+autogen-ext[ollama]==0.7.5

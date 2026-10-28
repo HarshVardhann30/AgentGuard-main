@@ -1,0 +1,170 @@
+{
+  "model_version": "agentguard-phase6-behavior-v1",
+  "selected_model": "random_forest",
+  "dataset_version": "agentguard-phase6-v1.0.0",
+  "feature_schema_version": "agentguard-behavior-v1",
+  "feature_names": [
+    "tool_search_files",
+    "tool_read_file",
+    "tool_calculator",
+    "tool_transfer",
+    "tool_other",
+    "recent_action_count",
+    "repeated_call_count",
+    "failed_action_count",
+    "sensitive_resource_indicator",
+    "external_communication_indicator",
+    "tool_switch_frequency",
+    "recent_denied_count",
+    "credential_exposure_indicator",
+    "prompt_injection_indicator",
+    "excessive_action_indicator",
+    "argument_size",
+    "sensitive_then_external_indicator",
+    "argument_schema_valid",
+    "target_category_sensitive",
+    "target_in_workspace",
+    "target_exists",
+    "permission_review_required",
+    "untrusted_content_signal",
+    "tool_name",
+    "operation_type"
+  ],
+  "metadata": {
+    "model_version": "agentguard-phase6-behavior-v1",
+    "dataset_version": "agentguard-phase6-v1.0.0",
+    "dataset_path": "ml/data/phase6_scenarios_v1.jsonl",
+    "dataset_sha256": "72a7ba2080a4b1782882cac8abd262c09d37f03d55707f5e6e672416ef6d1bc5",
+    "scenario_count": 192,
+    "feature_schema_version": "agentguard-behavior-v1",
+    "feature_names": [
+      "tool_search_files",
+      "tool_read_file",
+      "tool_calculator",
+      "tool_transfer",
+      "tool_other",
+      "recent_action_count",
+      "repeated_call_count",
+      "failed_action_count",
+      "sensitive_resource_indicator",
+      "external_communication_indicator",
+      "tool_switch_frequency",
+      "recent_denied_count",
+      "credential_exposure_indicator",
+      "prompt_injection_indicator",
+      "excessive_action_indicator",
+      "argument_size",
+      "sensitive_then_external_indicator",
+      "argument_schema_valid",
+      "target_category_sensitive",
+      "target_in_workspace",
+      "target_exists",
+      "permission_review_required",
+      "untrusted_content_signal",
+      "tool_name",
+      "operation_type"
+    ],
+    "seed": 20261027,
+    "split_strategy": "predeclared scenario-family/template groups; families never cross partitions",
+    "split_families": {
+      "train": [
+        "approval_lifecycle",
+        "file_lifecycle",
+        "file_modification",
+        "malformed_arguments",
+        "multistep_workflows",
+        "nonexistent_files",
+        "permitted_reads",
+        "repeated_denials",
+        "untrusted_file_injection",
+        "valid_calculations"
+      ],
+      "validation": [
+        "agentguard_bypass",
+        "authorization_expiration",
+        "invalid_approvals"
+      ],
+      "test": [
+        "path_traversal",
+        "protected_paths",
+        "sensitive_data"
+      ]
+    },
+    "split_family_counts": {
+      "train": 10,
+      "validation": 3,
+      "test": 3
+    },
+    "independent_held_out_families": {
+      "validation": [
+        "agentguard_bypass",
+        "invalid_approvals",
+        "authorization_expiration"
+      ],
+      "test": [
+        "protected_paths",
+        "path_traversal",
+        "sensitive_data"
+      ]
+    },
+    "split_counts": {
+      "train": 120,
+      "validation": 36,
+      "test": 36
+    },
+    "label_learnability": {
+      "train": {
+        "prohibited_scenarios": 50,
+        "prohibited_feature_identical_to_permitted": 0,
+        "maximum_possible_recall_at_any_threshold": 1.0,
+        "scenario_ids": []
+      },
+      "validation": {
+        "prohibited_scenarios": 15,
+        "prohibited_feature_identical_to_permitted": 10,
+        "maximum_possible_recall_at_any_threshold": 0.3333333333333333,
+        "scenario_ids": [
+          "AG6-invalid_approvals-005",
+          "AG6-invalid_approvals-006",
+          "AG6-invalid_approvals-007",
+          "AG6-invalid_approvals-008",
+          "AG6-invalid_approvals-009",
+          "AG6-authorization_expiration-005",
+          "AG6-authorization_expiration-006",
+          "AG6-authorization_expiration-007",
+          "AG6-authorization_expiration-008",
+          "AG6-authorization_expiration-009"
+        ]
+      },
+      "test": {
+        "prohibited_scenarios": 15,
+        "prohibited_feature_identical_to_permitted": 0,
+        "maximum_possible_recall_at_any_threshold": 1.0,
+        "scenario_ids": []
+      }
+    },
+    "class_counts": {
+      "train": {
+        "permitted": 70,
+        "prohibited": 50
+      },
+      "validation": {
+        "permitted": 21,
+        "prohibited": 15
+      },
+      "test": {
+        "permitted": 21,
+        "prohibited": 15
+      }
+    },
+    "preprocessing": "median imputer inside estimator pipeline; fit on train partition only",
+    "threshold_selection": "fixed classifier cut 0.5; no post-hoc security-policy tuning",
+    "versions": {
+      "python": "3.14.6",
+      "scikit_learn": "1.9.1",
+      "numpy": "2.5.4",
+      "joblib": "1.6.0"
+    },
+    "trained_at": "2026-10-28T06:31:28.778728+00:00"
+  }
+}

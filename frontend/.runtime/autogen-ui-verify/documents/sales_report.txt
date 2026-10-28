@@ -1,0 +1,6 @@
+Synthetic sales acceptance report
+January: 12000
+February: 15000
+March: 18000
+April: 21000
+Best region: North India

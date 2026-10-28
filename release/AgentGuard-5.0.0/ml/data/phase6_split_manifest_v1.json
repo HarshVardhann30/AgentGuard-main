@@ -1,0 +1,1793 @@
+{
+  "manifest_version": "agentguard-phase6-manifest-v1.0.0",
+  "dataset_version": "agentguard-phase6-v1.0.0",
+  "dataset_path": "ml\\data\\phase6_scenarios_v1.jsonl",
+  "dataset_sha256": "72a7ba2080a4b1782882cac8abd262c09d37f03d55707f5e6e672416ef6d1bc5",
+  "seed": 20261027,
+  "family_split_map": {
+    "permitted_reads": "train",
+    "valid_calculations": "train",
+    "file_modification": "train",
+    "file_lifecycle": "train",
+    "malformed_arguments": "train",
+    "nonexistent_files": "train",
+    "repeated_denials": "train",
+    "approval_lifecycle": "train",
+    "multistep_workflows": "train",
+    "untrusted_file_injection": "train",
+    "agentguard_bypass": "validation",
+    "invalid_approvals": "validation",
+    "authorization_expiration": "validation",
+    "protected_paths": "test",
+    "path_traversal": "test",
+    "sensitive_data": "test"
+  },
+  "splitting_unit": "scenario family (independent unit); scenario_group adds attack-template variants inside one family and never crosses a partition",
+  "independent_held_out_families": {
+    "validation": [
+      "agentguard_bypass",
+      "invalid_approvals",
+      "authorization_expiration"
+    ],
+    "test": [
+      "protected_paths",
+      "path_traversal",
+      "sensitive_data"
+    ]
+  },
+  "counts": {
+    "scenarios": 192,
+    "families": 16,
+    "template_groups": 160,
+    "by_split": {
+      "train": {
+        "scenario_count": 120,
+        "independent_families": [
+          "approval_lifecycle",
+          "file_lifecycle",
+          "file_modification",
+          "malformed_arguments",
+          "multistep_workflows",
+          "nonexistent_files",
+          "permitted_reads",
+          "repeated_denials",
+          "untrusted_file_injection",
+          "valid_calculations"
+        ],
+        "template_groups": [
+          "approval_lifecycle:template-v0",
+          "approval_lifecycle:template-v1",
+          "approval_lifecycle:template-v2",
+          "approval_lifecycle:template-v3",
+          "approval_lifecycle:template-v4",
+          "approval_lifecycle:template-v5",
+          "approval_lifecycle:template-v6",
+          "approval_lifecycle:template-v7",
+          "approval_lifecycle:template-v8",
+          "approval_lifecycle:template-v9",
+          "file_lifecycle:template-v0",
+          "file_lifecycle:template-v1",
+          "file_lifecycle:template-v2",
+          "file_lifecycle:template-v3",
+          "file_lifecycle:template-v4",
+          "file_lifecycle:template-v5",
+          "file_lifecycle:template-v6",
+          "file_lifecycle:template-v7",
+          "file_lifecycle:template-v8",
+          "file_lifecycle:template-v9",
+          "file_modification:template-v0",
+          "file_modification:template-v1",
+          "file_modification:template-v2",
+          "file_modification:template-v3",
+          "file_modification:template-v4",
+          "file_modification:template-v5",
+          "file_modification:template-v6",
+          "file_modification:template-v7",
+          "file_modification:template-v8",
+          "file_modification:template-v9",
+          "malformed_arguments:template-v0",
+          "malformed_arguments:template-v1",
+          "malformed_arguments:template-v2",
+          "malformed_arguments:template-v3",
+          "malformed_arguments:template-v4",
+          "malformed_arguments:template-v5",
+          "malformed_arguments:template-v6",
+          "malformed_arguments:template-v7",
+          "malformed_arguments:template-v8",
+          "malformed_arguments:template-v9",
+          "multistep_workflows:template-v0",
+          "multistep_workflows:template-v1",
+          "multistep_workflows:template-v2",
+          "multistep_workflows:template-v3",
+          "multistep_workflows:template-v4",
+          "multistep_workflows:template-v5",
+          "multistep_workflows:template-v6",
+          "multistep_workflows:template-v7",
+          "multistep_workflows:template-v8",
+          "multistep_workflows:template-v9",
+          "nonexistent_files:template-v0",
+          "nonexistent_files:template-v1",
+          "nonexistent_files:template-v2",
+          "nonexistent_files:template-v3",
+          "nonexistent_files:template-v4",
+          "nonexistent_files:template-v5",
+          "nonexistent_files:template-v6",
+          "nonexistent_files:template-v7",
+          "nonexistent_files:template-v8",
+          "nonexistent_files:template-v9",
+          "permitted_reads:template-v0",
+          "permitted_reads:template-v1",
+          "permitted_reads:template-v2",
+          "permitted_reads:template-v3",
+          "permitted_reads:template-v4",
+          "permitted_reads:template-v5",
+          "permitted_reads:template-v6",
+          "permitted_reads:template-v7",
+          "permitted_reads:template-v8",
+          "permitted_reads:template-v9",
+          "repeated_denials:template-v0",
+          "repeated_denials:template-v1",
+          "repeated_denials:template-v2",
+          "repeated_denials:template-v3",
+          "repeated_denials:template-v4",
+          "repeated_denials:template-v5",
+          "repeated_denials:template-v6",
+          "repeated_denials:template-v7",
+          "repeated_denials:template-v8",
+          "repeated_denials:template-v9",
+          "untrusted_file_injection:template-v0",
+          "untrusted_file_injection:template-v1",
+          "untrusted_file_injection:template-v2",
+          "untrusted_file_injection:template-v3",
+          "untrusted_file_injection:template-v4",
+          "untrusted_file_injection:template-v5",
+          "untrusted_file_injection:template-v6",
+          "untrusted_file_injection:template-v7",
+          "untrusted_file_injection:template-v8",
+          "untrusted_file_injection:template-v9",
+          "valid_calculations:template-v0",
+          "valid_calculations:template-v1",
+          "valid_calculations:template-v2",
+          "valid_calculations:template-v3",
+          "valid_calculations:template-v4",
+          "valid_calculations:template-v5",
+          "valid_calculations:template-v6",
+          "valid_calculations:template-v7",
+          "valid_calculations:template-v8",
+          "valid_calculations:template-v9"
+        ],
+        "class_counts": {
+          "permitted": 70,
+          "prohibited": 50
+        }
+      },
+      "validation": {
+        "scenario_count": 36,
+        "independent_families": [
+          "agentguard_bypass",
+          "authorization_expiration",
+          "invalid_approvals"
+        ],
+        "template_groups": [
+          "agentguard_bypass:template-v0",
+          "agentguard_bypass:template-v1",
+          "agentguard_bypass:template-v2",
+          "agentguard_bypass:template-v3",
+          "agentguard_bypass:template-v4",
+          "agentguard_bypass:template-v5",
+          "agentguard_bypass:template-v6",
+          "agentguard_bypass:template-v7",
+          "agentguard_bypass:template-v8",
+          "agentguard_bypass:template-v9",
+          "authorization_expiration:template-v0",
+          "authorization_expiration:template-v1",
+          "authorization_expiration:template-v2",
+          "authorization_expiration:template-v3",
+          "authorization_expiration:template-v4",
+          "authorization_expiration:template-v5",
+          "authorization_expiration:template-v6",
+          "authorization_expiration:template-v7",
+          "authorization_expiration:template-v8",
+          "authorization_expiration:template-v9",
+          "invalid_approvals:template-v0",
+          "invalid_approvals:template-v1",
+          "invalid_approvals:template-v2",
+          "invalid_approvals:template-v3",
+          "invalid_approvals:template-v4",
+          "invalid_approvals:template-v5",
+          "invalid_approvals:template-v6",
+          "invalid_approvals:template-v7",
+          "invalid_approvals:template-v8",
+          "invalid_approvals:template-v9"
+        ],
+        "class_counts": {
+          "permitted": 21,
+          "prohibited": 15
+        }
+      },
+      "test": {
+        "scenario_count": 36,
+        "independent_families": [
+          "path_traversal",
+          "protected_paths",
+          "sensitive_data"
+        ],
+        "template_groups": [
+          "path_traversal:template-v0",
+          "path_traversal:template-v1",
+          "path_traversal:template-v2",
+          "path_traversal:template-v3",
+          "path_traversal:template-v4",
+          "path_traversal:template-v5",
+          "path_traversal:template-v6",
+          "path_traversal:template-v7",
+          "path_traversal:template-v8",
+          "path_traversal:template-v9",
+          "protected_paths:template-v0",
+          "protected_paths:template-v1",
+          "protected_paths:template-v2",
+          "protected_paths:template-v3",
+          "protected_paths:template-v4",
+          "protected_paths:template-v5",
+          "protected_paths:template-v6",
+          "protected_paths:template-v7",
+          "protected_paths:template-v8",
+          "protected_paths:template-v9",
+          "sensitive_data:template-v0",
+          "sensitive_data:template-v1",
+          "sensitive_data:template-v2",
+          "sensitive_data:template-v3",
+          "sensitive_data:template-v4",
+          "sensitive_data:template-v5",
+          "sensitive_data:template-v6",
+          "sensitive_data:template-v7",
+          "sensitive_data:template-v8",
+          "sensitive_data:template-v9"
+        ],
+        "class_counts": {
+          "permitted": 21,
+          "prohibited": 15
+        }
+      }
+    }
+  },
+  "entries_sha256": "9228612e9c182aee706fef14488505c1460f4f152afc9560226a885656fc3b47",
+  "entries": [
+    {
+      "scenario_id": "AG6-agentguard_bypass-000",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v0",
+      "scenario_group": "agentguard_bypass:template-v0",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-001",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v1",
+      "scenario_group": "agentguard_bypass:template-v1",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-002",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v2",
+      "scenario_group": "agentguard_bypass:template-v2",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-003",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v3",
+      "scenario_group": "agentguard_bypass:template-v3",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-004",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v4",
+      "scenario_group": "agentguard_bypass:template-v4",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-005",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v5",
+      "scenario_group": "agentguard_bypass:template-v5",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-006",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v6",
+      "scenario_group": "agentguard_bypass:template-v6",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-007",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v7",
+      "scenario_group": "agentguard_bypass:template-v7",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-008",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v8",
+      "scenario_group": "agentguard_bypass:template-v8",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-009",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v9",
+      "scenario_group": "agentguard_bypass:template-v9",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-010",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v0",
+      "scenario_group": "agentguard_bypass:template-v0",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-agentguard_bypass-011",
+      "scenario_family": "agentguard_bypass",
+      "attack_template_id": "template-v1",
+      "scenario_group": "agentguard_bypass:template-v1",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-000",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v0",
+      "scenario_group": "approval_lifecycle:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-001",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v1",
+      "scenario_group": "approval_lifecycle:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-002",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v2",
+      "scenario_group": "approval_lifecycle:template-v2",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-003",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v3",
+      "scenario_group": "approval_lifecycle:template-v3",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-004",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v4",
+      "scenario_group": "approval_lifecycle:template-v4",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-005",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v5",
+      "scenario_group": "approval_lifecycle:template-v5",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-006",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v6",
+      "scenario_group": "approval_lifecycle:template-v6",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-007",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v7",
+      "scenario_group": "approval_lifecycle:template-v7",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-008",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v8",
+      "scenario_group": "approval_lifecycle:template-v8",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-009",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v9",
+      "scenario_group": "approval_lifecycle:template-v9",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-010",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v0",
+      "scenario_group": "approval_lifecycle:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-approval_lifecycle-011",
+      "scenario_family": "approval_lifecycle",
+      "attack_template_id": "template-v1",
+      "scenario_group": "approval_lifecycle:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-000",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v0",
+      "scenario_group": "authorization_expiration:template-v0",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-001",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v1",
+      "scenario_group": "authorization_expiration:template-v1",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-002",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v2",
+      "scenario_group": "authorization_expiration:template-v2",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-003",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v3",
+      "scenario_group": "authorization_expiration:template-v3",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-004",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v4",
+      "scenario_group": "authorization_expiration:template-v4",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-005",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v5",
+      "scenario_group": "authorization_expiration:template-v5",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-006",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v6",
+      "scenario_group": "authorization_expiration:template-v6",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-007",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v7",
+      "scenario_group": "authorization_expiration:template-v7",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-008",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v8",
+      "scenario_group": "authorization_expiration:template-v8",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-009",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v9",
+      "scenario_group": "authorization_expiration:template-v9",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-010",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v0",
+      "scenario_group": "authorization_expiration:template-v0",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-authorization_expiration-011",
+      "scenario_family": "authorization_expiration",
+      "attack_template_id": "template-v1",
+      "scenario_group": "authorization_expiration:template-v1",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-000",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v0",
+      "scenario_group": "file_lifecycle:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-001",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v1",
+      "scenario_group": "file_lifecycle:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-002",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v2",
+      "scenario_group": "file_lifecycle:template-v2",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-003",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v3",
+      "scenario_group": "file_lifecycle:template-v3",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-004",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v4",
+      "scenario_group": "file_lifecycle:template-v4",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-005",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v5",
+      "scenario_group": "file_lifecycle:template-v5",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-006",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v6",
+      "scenario_group": "file_lifecycle:template-v6",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-007",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v7",
+      "scenario_group": "file_lifecycle:template-v7",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-008",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v8",
+      "scenario_group": "file_lifecycle:template-v8",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-009",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v9",
+      "scenario_group": "file_lifecycle:template-v9",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-010",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v0",
+      "scenario_group": "file_lifecycle:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_lifecycle-011",
+      "scenario_family": "file_lifecycle",
+      "attack_template_id": "template-v1",
+      "scenario_group": "file_lifecycle:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_modification-000",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v0",
+      "scenario_group": "file_modification:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_modification-001",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v1",
+      "scenario_group": "file_modification:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_modification-002",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v2",
+      "scenario_group": "file_modification:template-v2",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_modification-003",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v3",
+      "scenario_group": "file_modification:template-v3",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_modification-004",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v4",
+      "scenario_group": "file_modification:template-v4",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_modification-005",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v5",
+      "scenario_group": "file_modification:template-v5",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-file_modification-006",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v6",
+      "scenario_group": "file_modification:template-v6",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-file_modification-007",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v7",
+      "scenario_group": "file_modification:template-v7",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-file_modification-008",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v8",
+      "scenario_group": "file_modification:template-v8",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-file_modification-009",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v9",
+      "scenario_group": "file_modification:template-v9",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-file_modification-010",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v0",
+      "scenario_group": "file_modification:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-file_modification-011",
+      "scenario_family": "file_modification",
+      "attack_template_id": "template-v1",
+      "scenario_group": "file_modification:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-000",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v0",
+      "scenario_group": "invalid_approvals:template-v0",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-001",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v1",
+      "scenario_group": "invalid_approvals:template-v1",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-002",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v2",
+      "scenario_group": "invalid_approvals:template-v2",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-003",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v3",
+      "scenario_group": "invalid_approvals:template-v3",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-004",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v4",
+      "scenario_group": "invalid_approvals:template-v4",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-005",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v5",
+      "scenario_group": "invalid_approvals:template-v5",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-006",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v6",
+      "scenario_group": "invalid_approvals:template-v6",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-007",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v7",
+      "scenario_group": "invalid_approvals:template-v7",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-008",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v8",
+      "scenario_group": "invalid_approvals:template-v8",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-009",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v9",
+      "scenario_group": "invalid_approvals:template-v9",
+      "dataset_split": "validation",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-010",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v0",
+      "scenario_group": "invalid_approvals:template-v0",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-invalid_approvals-011",
+      "scenario_family": "invalid_approvals",
+      "attack_template_id": "template-v1",
+      "scenario_group": "invalid_approvals:template-v1",
+      "dataset_split": "validation",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-000",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v0",
+      "scenario_group": "malformed_arguments:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-001",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v1",
+      "scenario_group": "malformed_arguments:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-002",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v2",
+      "scenario_group": "malformed_arguments:template-v2",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-003",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v3",
+      "scenario_group": "malformed_arguments:template-v3",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-004",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v4",
+      "scenario_group": "malformed_arguments:template-v4",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-005",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v5",
+      "scenario_group": "malformed_arguments:template-v5",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-006",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v6",
+      "scenario_group": "malformed_arguments:template-v6",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-007",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v7",
+      "scenario_group": "malformed_arguments:template-v7",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-008",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v8",
+      "scenario_group": "malformed_arguments:template-v8",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-009",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v9",
+      "scenario_group": "malformed_arguments:template-v9",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-010",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v0",
+      "scenario_group": "malformed_arguments:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-malformed_arguments-011",
+      "scenario_family": "malformed_arguments",
+      "attack_template_id": "template-v1",
+      "scenario_group": "malformed_arguments:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-000",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v0",
+      "scenario_group": "multistep_workflows:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-001",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v1",
+      "scenario_group": "multistep_workflows:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-002",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v2",
+      "scenario_group": "multistep_workflows:template-v2",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-003",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v3",
+      "scenario_group": "multistep_workflows:template-v3",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-004",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v4",
+      "scenario_group": "multistep_workflows:template-v4",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-005",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v5",
+      "scenario_group": "multistep_workflows:template-v5",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-006",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v6",
+      "scenario_group": "multistep_workflows:template-v6",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-007",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v7",
+      "scenario_group": "multistep_workflows:template-v7",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-008",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v8",
+      "scenario_group": "multistep_workflows:template-v8",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-009",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v9",
+      "scenario_group": "multistep_workflows:template-v9",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-010",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v0",
+      "scenario_group": "multistep_workflows:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-multistep_workflows-011",
+      "scenario_family": "multistep_workflows",
+      "attack_template_id": "template-v1",
+      "scenario_group": "multistep_workflows:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-000",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v0",
+      "scenario_group": "nonexistent_files:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-001",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v1",
+      "scenario_group": "nonexistent_files:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-002",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v2",
+      "scenario_group": "nonexistent_files:template-v2",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-003",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v3",
+      "scenario_group": "nonexistent_files:template-v3",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-004",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v4",
+      "scenario_group": "nonexistent_files:template-v4",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-005",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v5",
+      "scenario_group": "nonexistent_files:template-v5",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-006",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v6",
+      "scenario_group": "nonexistent_files:template-v6",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-007",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v7",
+      "scenario_group": "nonexistent_files:template-v7",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-008",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v8",
+      "scenario_group": "nonexistent_files:template-v8",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-009",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v9",
+      "scenario_group": "nonexistent_files:template-v9",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-010",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v0",
+      "scenario_group": "nonexistent_files:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-nonexistent_files-011",
+      "scenario_family": "nonexistent_files",
+      "attack_template_id": "template-v1",
+      "scenario_group": "nonexistent_files:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-000",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v0",
+      "scenario_group": "path_traversal:template-v0",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-001",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v1",
+      "scenario_group": "path_traversal:template-v1",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-002",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v2",
+      "scenario_group": "path_traversal:template-v2",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-003",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v3",
+      "scenario_group": "path_traversal:template-v3",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-004",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v4",
+      "scenario_group": "path_traversal:template-v4",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-005",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v5",
+      "scenario_group": "path_traversal:template-v5",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-006",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v6",
+      "scenario_group": "path_traversal:template-v6",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-007",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v7",
+      "scenario_group": "path_traversal:template-v7",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-008",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v8",
+      "scenario_group": "path_traversal:template-v8",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-009",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v9",
+      "scenario_group": "path_traversal:template-v9",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-010",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v0",
+      "scenario_group": "path_traversal:template-v0",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-path_traversal-011",
+      "scenario_family": "path_traversal",
+      "attack_template_id": "template-v1",
+      "scenario_group": "path_traversal:template-v1",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-000",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v0",
+      "scenario_group": "permitted_reads:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-001",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v1",
+      "scenario_group": "permitted_reads:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-002",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v2",
+      "scenario_group": "permitted_reads:template-v2",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-003",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v3",
+      "scenario_group": "permitted_reads:template-v3",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-004",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v4",
+      "scenario_group": "permitted_reads:template-v4",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-005",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v5",
+      "scenario_group": "permitted_reads:template-v5",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-006",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v6",
+      "scenario_group": "permitted_reads:template-v6",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-007",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v7",
+      "scenario_group": "permitted_reads:template-v7",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-008",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v8",
+      "scenario_group": "permitted_reads:template-v8",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-009",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v9",
+      "scenario_group": "permitted_reads:template-v9",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-010",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v0",
+      "scenario_group": "permitted_reads:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-permitted_reads-011",
+      "scenario_family": "permitted_reads",
+      "attack_template_id": "template-v1",
+      "scenario_group": "permitted_reads:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-000",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v0",
+      "scenario_group": "protected_paths:template-v0",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-001",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v1",
+      "scenario_group": "protected_paths:template-v1",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-002",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v2",
+      "scenario_group": "protected_paths:template-v2",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-003",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v3",
+      "scenario_group": "protected_paths:template-v3",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-004",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v4",
+      "scenario_group": "protected_paths:template-v4",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-005",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v5",
+      "scenario_group": "protected_paths:template-v5",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-006",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v6",
+      "scenario_group": "protected_paths:template-v6",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-007",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v7",
+      "scenario_group": "protected_paths:template-v7",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-008",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v8",
+      "scenario_group": "protected_paths:template-v8",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-009",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v9",
+      "scenario_group": "protected_paths:template-v9",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-010",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v0",
+      "scenario_group": "protected_paths:template-v0",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-protected_paths-011",
+      "scenario_family": "protected_paths",
+      "attack_template_id": "template-v1",
+      "scenario_group": "protected_paths:template-v1",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-000",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v0",
+      "scenario_group": "repeated_denials:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-001",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v1",
+      "scenario_group": "repeated_denials:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-002",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v2",
+      "scenario_group": "repeated_denials:template-v2",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-003",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v3",
+      "scenario_group": "repeated_denials:template-v3",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-004",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v4",
+      "scenario_group": "repeated_denials:template-v4",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-005",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v5",
+      "scenario_group": "repeated_denials:template-v5",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-006",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v6",
+      "scenario_group": "repeated_denials:template-v6",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-007",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v7",
+      "scenario_group": "repeated_denials:template-v7",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-008",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v8",
+      "scenario_group": "repeated_denials:template-v8",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-009",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v9",
+      "scenario_group": "repeated_denials:template-v9",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-010",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v0",
+      "scenario_group": "repeated_denials:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-repeated_denials-011",
+      "scenario_family": "repeated_denials",
+      "attack_template_id": "template-v1",
+      "scenario_group": "repeated_denials:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-000",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v0",
+      "scenario_group": "sensitive_data:template-v0",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-001",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v1",
+      "scenario_group": "sensitive_data:template-v1",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-002",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v2",
+      "scenario_group": "sensitive_data:template-v2",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-003",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v3",
+      "scenario_group": "sensitive_data:template-v3",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-004",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v4",
+      "scenario_group": "sensitive_data:template-v4",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-005",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v5",
+      "scenario_group": "sensitive_data:template-v5",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-006",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v6",
+      "scenario_group": "sensitive_data:template-v6",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-007",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v7",
+      "scenario_group": "sensitive_data:template-v7",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-008",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v8",
+      "scenario_group": "sensitive_data:template-v8",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-009",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v9",
+      "scenario_group": "sensitive_data:template-v9",
+      "dataset_split": "test",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-010",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v0",
+      "scenario_group": "sensitive_data:template-v0",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-sensitive_data-011",
+      "scenario_family": "sensitive_data",
+      "attack_template_id": "template-v1",
+      "scenario_group": "sensitive_data:template-v1",
+      "dataset_split": "test",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-000",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v0",
+      "scenario_group": "untrusted_file_injection:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-001",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v1",
+      "scenario_group": "untrusted_file_injection:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-002",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v2",
+      "scenario_group": "untrusted_file_injection:template-v2",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-003",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v3",
+      "scenario_group": "untrusted_file_injection:template-v3",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-004",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v4",
+      "scenario_group": "untrusted_file_injection:template-v4",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-005",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v5",
+      "scenario_group": "untrusted_file_injection:template-v5",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-006",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v6",
+      "scenario_group": "untrusted_file_injection:template-v6",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-007",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v7",
+      "scenario_group": "untrusted_file_injection:template-v7",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-008",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v8",
+      "scenario_group": "untrusted_file_injection:template-v8",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-009",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v9",
+      "scenario_group": "untrusted_file_injection:template-v9",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-010",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v0",
+      "scenario_group": "untrusted_file_injection:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-untrusted_file_injection-011",
+      "scenario_family": "untrusted_file_injection",
+      "attack_template_id": "template-v1",
+      "scenario_group": "untrusted_file_injection:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-000",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v0",
+      "scenario_group": "valid_calculations:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-001",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v1",
+      "scenario_group": "valid_calculations:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-002",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v2",
+      "scenario_group": "valid_calculations:template-v2",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-003",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v3",
+      "scenario_group": "valid_calculations:template-v3",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-004",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v4",
+      "scenario_group": "valid_calculations:template-v4",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-005",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v5",
+      "scenario_group": "valid_calculations:template-v5",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-006",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v6",
+      "scenario_group": "valid_calculations:template-v6",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-007",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v7",
+      "scenario_group": "valid_calculations:template-v7",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-008",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v8",
+      "scenario_group": "valid_calculations:template-v8",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-009",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v9",
+      "scenario_group": "valid_calculations:template-v9",
+      "dataset_split": "train",
+      "ground_truth_label": "prohibited"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-010",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v0",
+      "scenario_group": "valid_calculations:template-v0",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    },
+    {
+      "scenario_id": "AG6-valid_calculations-011",
+      "scenario_family": "valid_calculations",
+      "attack_template_id": "template-v1",
+      "scenario_group": "valid_calculations:template-v1",
+      "dataset_split": "train",
+      "ground_truth_label": "permitted"
+    }
+  ]
+}
